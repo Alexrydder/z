@@ -1,0 +1,10 @@
+# Production image for go.gablvm.org: the dev image (Ruby, gems, Node) plus
+# the application source and precompiled assets.
+FROM localhost/z-app:dev
+USER root
+COPY --chown=vscode:vscode . /app
+USER vscode
+WORKDIR /app
+RUN bundle install --quiet && npm ci --no-audit --no-fund \
+ && RAILS_ENV=production SECRET_KEY_BASE=build-only DB_HOST=127.0.0.1 DB_PORT=3307 DB_DATABASE=z DB_USERNAME=z DB_PASSWORD=x OMNIAUTH_PROVIDER=developer USER_LOOKUP_SKELETON=1 \
+    bundle exec rails assets:precompile

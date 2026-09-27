@@ -1,0 +1,7 @@
+.git
+.env
+.db.env
+node_modules
+tmp
+log
+vendor/bundle
