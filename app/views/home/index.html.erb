@@ -3,6 +3,7 @@
     <h1 class="tw-text-6xl tw-text-white" data-cy="hero-title">
       <%= t('views.root.hero_text') %>
     </h1>
+    <p class="tw-text-2xl tw-text-white tw-mt-4">A short go.gablvm.org address for any page, ready to say out loud, print, or share.</p>
     <% unless signed_in? %>
       <a class="tw-inline-flex tw-py-4 tw-px-8 tw-bg-umn-gold hover:tw-bg-umn-gold-light tw-text-umn-neutral-900 tw-no-underline hover:tw-text-umn-neutral-900 hover:tw-no-underline tw-my-4" href="<%= signin_path %>">
         <%= t('views.root.hero_button') %>
@@ -12,18 +13,11 @@
 </div>
 <div class="tw-max-w-[90em] tw-mx-auto tw-px-4">
   <div class="umn-post-it tw-relative tw-bg-white tw-my-8 tw-p-8 tw-border before:tw-block before:tw-w-24 before:tw-h-5 before:tw-absolute before:tw-bg-umn-gold before:-tw-top-2 before:tw-left-1/2">
-    <div class="tw-grid md:tw-grid-cols-2 tw-gap-6 tw-grid-cols-1">
-      <div>
-        <iframe class="tw-w-full tw-border" width="560" height="315" src="https://www.youtube-nocookie.com/embed/1mvUh2wNCA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div>
-        <h2 class="tw-text-4xl tw-font-semibold">z.umn.edu</h2>
-        <div class="tw-space-y-4 tw-text-lg tw-text-umn-neutral-700">
-          <p class="">
-            Z is a URL shortening service provided
-            by <%= link_to 'LATIS', 'http://latis.umn.edu/', target: '_blank' %> and to everyone with a University of Minnesota Internet ID.</p>
-          <p><a href="<%= signin_path %>">Sign in</a> to get started.</p>
-        </div>
-      </div>
+    <h2 class="tw-text-4xl tw-font-semibold">How it works</h2>
+    <div class="tw-space-y-4 tw-text-lg tw-text-umn-neutral-700">
+      <p>A link like go.gablvm.org/prayer sends people to the full address behind it. GABLVM staff sign in to create links, choose the words, download a QR code, and see how often each one is used.</p>
+      <p>If a short link you received does not work, it may have been retired. Write to <a href="mailto:help@gablvm.org">help@gablvm.org</a> and say which link it was.</p>
+      <p>This service runs on Z, the open source shortener written at the University of Minnesota, with GABLVM's own sign-in and branding.</p>
     </div>
   </div>
+</div>

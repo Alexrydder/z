@@ -47,9 +47,9 @@ en:
           admins: "Manage Admins"
           audit_log: "Audit Log"
     root:
-      hero_text: "What will you Z?"
-      hero_button: "Sign In to Z"
-      hello: "z.umn.edu"
+      hero_text: "GABLVM short links"
+      hero_button: "Sign in to manage links"
+      hello: "go.gablvm.org"
     announcements:
       form:
         start_on_label: "Start delivering at"

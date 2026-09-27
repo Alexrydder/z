@@ -9,7 +9,7 @@ const GROUP_ICON = `<svg data-cy="group-icon" xmlns="http://www.w3.org/2000/svg"
 </svg>`;
 
 function peopleSearchUrl(groupName: string): string {
-  return `https://udirectory.umn.edu/lookup?type=Internet+ID&CN=${groupName}&campus=a&role=any`;
+  return `mailto:${groupName}`;
 }
 
 function ownerPersonAnchorHtml(groupName: string): string {

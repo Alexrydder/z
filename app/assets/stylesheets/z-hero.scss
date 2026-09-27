@@ -1,5 +1,5 @@
 .z-bg-umn {
-  background-image: image-url("umn-pano-2880x913.jpg");
+  background-image: linear-gradient(135deg, #0f3d1a, #083013);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -11,6 +11,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: transparent;
   }
 }
