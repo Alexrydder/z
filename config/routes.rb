@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   get "shortener", to: "urls#index"
 
   get "/pages/:page" => "pages#show", :as => :pages
+  # Public copy of the FAQ, outside the /shortener prefix that Cloudflare
+  # Access guards, so visitors can read it without signing in.
+  get "/faq", to: "faq#index", as: "public_faq"
 
   # This will allow us to run the meat of the app at z.umn.edu/shortener and
   # assume that all other z.umn.edu/:keywords are requests for short urls.

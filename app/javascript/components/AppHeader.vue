@@ -16,7 +16,7 @@
               <li><a href="/shortener/admin/announcements">Announcements</a></li>
             </template>
           </template>
-          <li><a href="/shortener/faq">FAQ</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li><a href="mailto:help@gablvm.org">Contact</a></li>
           <li v-if="!isLoggedIn"><a href="/shortener/signin">Sign in</a></li>
           <li v-if="isLoggedIn"><a href="/shortener/signout">Sign out</a></li>
