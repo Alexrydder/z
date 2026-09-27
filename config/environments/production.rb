@@ -56,7 +56,7 @@ Rails.application.configure do
   # Can be used together with config.force_ssl for Strict-Transport-Security and secure cookies.
   # JRJ - Turning this on may break things in our prod environment since the
   # proxy forwards both http and https traffic to the app.
-  # config.assume_ssl = true
+  config.assume_ssl = ENV["RAILS_ASSUME_SSL"].present?
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
 
