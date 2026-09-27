@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     get "/auth/cloudflare_access/callback", to: "sessions#create"
   end
 
+  get "/auth/failure", to: "sessions#failure"
   get 'auth/saml/metadata' => 'saml_metadata#metadata'
 
   root "home#index"

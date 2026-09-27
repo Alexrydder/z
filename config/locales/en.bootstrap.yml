@@ -157,7 +157,7 @@ en:
           day: "Day"
           clicks: "Clicks"
       sleek_form:
-        domain: "z.umn.edu / "
+        domain: "go.gablvm.org / "
         placeholders:
           url: "destination URL"
           keyword: "keyword (optional)"
@@ -243,4 +243,4 @@ en:
         submit_confirm: "Are you sure you want to delete these URLs?"
         cancel: "Cancel"
     not_found:
-      hostname: "z.umn.edu"
+      hostname: "go.gablvm.org"

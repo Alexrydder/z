@@ -41,6 +41,13 @@ class SessionsController < ApplicationController
 
   end
 
+  # OmniAuth sends every strategy failure here with ?message=<reason>.
+  def failure
+    @reason = params[:message].to_s
+    Rails.logger.warn("sign-in failed: #{@reason} strategy=#{params[:strategy]}")
+    render "sessions/failure", status: :unauthorized
+  end
+
   def destroy
     sign_out
     redirect_to shib_logout_url, :allow_other_host => true

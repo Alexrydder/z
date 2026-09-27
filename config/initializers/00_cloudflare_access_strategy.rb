@@ -26,12 +26,16 @@ module OmniAuth
 
       def callback_phase
         token = request.env['HTTP_CF_ACCESS_JWT_ASSERTION'] || request.cookies['CF_Authorization']
-        return fail!(:missing_access_token) if token.blank?
+        if token.blank?
+          Rails.logger.warn("cloudflare_access: no Cf-Access-Jwt-Assertion header on #{request.path}")
+          return fail!(:missing_access_token)
+        end
 
         payload = verify(token)
         @claims = payload
         super
-      rescue JWT::DecodeError => e
+      rescue JWT::DecodeError, JSON::ParserError, SocketError, Timeout::Error => e
+        Rails.logger.error("cloudflare_access: #{e.class}: #{e.message}")
         fail!(:invalid_access_token, e)
       end
 
