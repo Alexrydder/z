@@ -1,7 +1,8 @@
 <template>
   <footer class="gablvm-footer" role="contentinfo">
     <div class="gablvm-footer__inner">
-      <nav aria-label="Footer">
+      <h2 class="gablvm-visually-hidden" id="gablvm-footer-heading">Footer</h2>
+      <nav aria-labelledby="gablvm-footer-heading">
         <ul class="gablvm-footer__links">
           <li><a href="https://gablvm.org/">gablvm.org</a></li>
           <li><a href="https://gablvm.org/accessibility-statement">Accessibility Statement</a></li>
@@ -31,6 +32,17 @@
 const year = new Date().getFullYear();
 </script>
 <style>
+.gablvm-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .gablvm-footer {
   background: #0f3d1a;
   color: #faf7f0;
