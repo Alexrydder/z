@@ -30,6 +30,10 @@ module SessionsHelper
   end
 
   def shib_logout_url
-    ENV["SHIB_IDP_SLO"]
+    if Rails.application.config.omniauth_provider == "cloudflare_access"
+      "https://#{ENV.fetch('CF_ACCESS_TEAM_DOMAIN')}/cdn-cgi/access/logout"
+    else
+      ENV["SHIB_IDP_SLO"]
+    end
   end
 end

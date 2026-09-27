@@ -10,8 +10,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # short circuit and just sign in if we're using the developer provider
-    if Rails.application.config.omniauth_provider == "developer"
+    # short circuit and just sign in if we're using the developer provider,
+    # or when Cloudflare Access already verified the person (see
+    # lib/omniauth/strategies/cloudflare_access.rb)
+    if %w[developer cloudflare_access].include?(Rails.application.config.omniauth_provider)
       @user = User.find_or_create_by(
         uid: auth_hash[:uid],
       )

@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   if Rails.application.config.omniauth_provider == "developer"
     get "/auth/developer/callback", to: "sessions#create"
   end
+  if Rails.application.config.omniauth_provider == "cloudflare_access"
+    get "/auth/cloudflare_access/callback", to: "sessions#create"
+  end
 
   get 'auth/saml/metadata' => 'saml_metadata#metadata'
 
