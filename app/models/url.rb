@@ -15,6 +15,7 @@ require 'uri'
 require 'ipaddr'
 
 class Url < ApplicationRecord
+  AUTO_KEYWORD_LETTERS = %w[b c d f g h j k l m n p q r s t v w x z].freeze
   include VersionUser
   has_paper_trail ignore: [:total_clicks]
   before_destroy :version_history
@@ -47,11 +48,13 @@ class Url < ApplicationRecord
     # remove leading and trailing whitespaces for validation
     url.strip!
 
-    # Set keyword if it's blank
+    # Set keyword if it's blank: four random consonants, so short links are
+    # not guessable in sequence and never spell a word.
     if keyword.blank?
-      index = Url.maximum(:id).to_i.next
-      index += 1 while Url.exists?(keyword: index.to_s(36))
-      self.keyword = index.to_s(36)
+      self.keyword = loop do
+        candidate = Array.new(4) { AUTO_KEYWORD_LETTERS.sample }.join
+        break candidate unless Url.exists?(keyword: candidate)
+      end
     end
   end
 
