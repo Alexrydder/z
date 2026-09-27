@@ -2,6 +2,9 @@
 # the application source and precompiled assets.
 FROM localhost/z-app:dev
 USER root
+# The dev image copies the tree it was built from; drop it so removed files
+# do not linger under the fresh copy.
+RUN rm -rf /app/lib /app/app /app/config /app/db /app/public /app/cypress
 COPY --chown=vscode:vscode . /app
 USER vscode
 WORKDIR /app
