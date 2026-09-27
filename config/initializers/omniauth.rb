@@ -2,7 +2,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   if Rails.application.config.omniauth_provider == "developer"
     provider :developer
   elsif Rails.application.config.omniauth_provider == "cloudflare_access"
-    require Rails.root.join("lib/omniauth/strategies/cloudflare_access").to_s
     provider :cloudflare_access,
              team_domain: ENV.fetch("CF_ACCESS_TEAM_DOMAIN"),
              audience: ENV.fetch("CF_ACCESS_AUD")

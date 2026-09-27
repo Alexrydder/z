@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+# Lives in initializers rather than lib/ so Zeitwerk does not try to autoload
+# it under the OmniAuth namespace; it loads before omniauth.rb by name order.
 
 require 'omniauth'
 require 'jwt'
