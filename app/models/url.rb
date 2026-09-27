@@ -31,7 +31,7 @@ class Url < ApplicationRecord
 
   before_save do
     # Add http:// if necessary
-    self.url = "http://#{url}" if URI.parse(url).scheme.nil?
+    self.url = "https://#{url}" if URI.parse(url).scheme.nil?
   end
 
   validates :keyword, uniqueness: { case_sensitive: false }, presence: true
