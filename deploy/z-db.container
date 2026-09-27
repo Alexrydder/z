@@ -1,0 +1,16 @@
+[Unit]
+Description=Z short links MySQL
+
+[Container]
+Image=docker.io/library/mysql:8.0
+ContainerName=z-db
+Volume=z-db-data:/var/lib/mysql
+PublishPort=127.0.0.1:3307:3306
+EnvironmentFile=/srv/z/.db.env
+Exec=--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

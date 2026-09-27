@@ -1,0 +1,17 @@
+[Unit]
+Description=Z short links Rails app
+After=z-db.service
+Requires=z-db.service
+
+[Container]
+Image=localhost/z-app:prod
+ContainerName=z-web
+Network=host
+EnvironmentFile=/srv/z/.env
+Exec=bash -lc "rm -f tmp/pids/server.pid && bundle exec rails server -b 127.0.0.1 -p 3000 -e production"
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
