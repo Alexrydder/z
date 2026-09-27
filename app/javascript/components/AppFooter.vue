@@ -7,7 +7,7 @@
       </p>
       <ul class="gablvm-footer__links">
         <li><a href="https://gablvm.org/">gablvm.org</a></li>
-        <li><a href="https://github.com/UMN-LATIS/z">Built on Z, open source under the AGPL</a></li>
+        <li><a href="https://github.com/Alexrydder/z/tree/gablvm">Source code, the GABLVM branch of Z, open source under the AGPL</a></li>
         <li><a href="https://gablvm.org/privacy-policy">Privacy</a></li>
       </ul>
     </div>
