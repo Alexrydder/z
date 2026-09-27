@@ -23,7 +23,7 @@ class UrlBarcodesController < ApplicationController
     when 'svg'
       qrcode.as_svg(viewbox: true)
     else
-      qrcode.as_png(size: 300, border_modules: 1)
+      qrcode.as_png(size: 300, border_modules: 4)
     end
   end
 
