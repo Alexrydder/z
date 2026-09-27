@@ -3,9 +3,9 @@
     <h1 class="tw-text-6xl tw-text-white" data-cy="hero-title">
       <%= t('views.root.hero_text') %>
     </h1>
-    <p class="tw-text-2xl tw-text-white tw-mt-4">A short go.gablvm.org address for any page, ready to say out loud, print, or share.</p>
+    <p class="tw-text-2xl tw-text-white tw-mt-4 tw-mx-auto" style="max-width: 40ch">Short, memorable addresses for GABLVM pages, programs, and events. Easy to say aloud, easy to type, easy to print.</p>
     <% unless signed_in? %>
-      <a class="tw-inline-flex tw-py-4 tw-px-8 tw-bg-umn-gold hover:tw-bg-umn-gold-light tw-text-umn-neutral-900 tw-no-underline hover:tw-text-umn-neutral-900 hover:tw-no-underline tw-my-4" href="<%= signin_path %>">
+      <a class="tw-inline-flex tw-py-4 tw-px-8 tw-bg-umn-gold hover:tw-bg-umn-gold-light tw-text-umn-neutral-900 tw-no-underline hover:tw-text-umn-neutral-900 hover:tw-no-underline tw-my-6" href="<%= signin_path %>">
         <%= t('views.root.hero_button') %>
       </a>
     <% end %>
@@ -15,9 +15,13 @@
   <div class="umn-post-it tw-relative tw-bg-white tw-my-8 tw-p-8 tw-border before:tw-block before:tw-w-24 before:tw-h-5 before:tw-absolute before:tw-bg-umn-gold before:-tw-top-2 before:tw-left-1/2">
     <h2 class="tw-text-4xl tw-font-semibold">How it works</h2>
     <div class="tw-space-y-4 tw-text-lg tw-text-umn-neutral-700">
-      <p>A link like go.gablvm.org/prayer sends people to the full address behind it. GABLVM staff sign in to create links, choose the words, download a QR code, and see how often each one is used.</p>
-      <p>If a short link you received does not work, it may have been retired. Write to <a href="mailto:help@gablvm.org">help@gablvm.org</a> and say which link it was.</p>
-      <p>This service runs on Z, the open source shortener written at the University of Minnesota, with GABLVM's own sign-in and branding.</p>
+      <p>A link such as go.gablvm.org/privacy forwards you to the full address behind it. Nothing is stored about you beyond the country the visit came from and the time.</p>
+      <p>GABLVM staff and volunteers sign in to create links, choose the words, download a QR code for print, and see how often each link is used.</p>
+    </div>
+    <h2 class="tw-text-4xl tw-font-semibold tw-mt-10">If a link does not work</h2>
+    <div class="tw-space-y-4 tw-text-lg tw-text-umn-neutral-700">
+      <p>It may have been retired or mistyped. Write to <a href="mailto:help@gablvm.org">help@gablvm.org</a> with the exact link and where you found it.</p>
+      <p>More answers are in the <a href="/faq">short links FAQ</a>. Our <a href="https://gablvm.org/privacy-policy">privacy policy</a> describes exactly what this service keeps.</p>
     </div>
   </div>
 </div>
