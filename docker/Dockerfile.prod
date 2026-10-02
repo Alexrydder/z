@@ -8,6 +8,8 @@ RUN rm -rf /app/lib /app/app /app/config /app/db /app/public /app/cypress
 COPY --chown=vscode:vscode . /app
 USER vscode
 WORKDIR /app
+# config/secrets.yml reads RAILS_SECRET; the real one reaches the container at
+# run time from /srv/z/.env, which never goes into the image.
 RUN bundle install --quiet && npm ci --no-audit --no-fund \
- && RAILS_ENV=production SECRET_KEY_BASE=build-only DB_HOST=127.0.0.1 DB_PORT=3307 DB_DATABASE=z DB_USERNAME=z DB_PASSWORD=x OMNIAUTH_PROVIDER=developer USER_LOOKUP_SKELETON=1 \
+ && RAILS_ENV=production SECRET_KEY_BASE=build-only RAILS_SECRET=build-only DB_HOST=127.0.0.1 DB_PORT=3307 DB_DATABASE=z DB_USERNAME=z DB_PASSWORD=x OMNIAUTH_PROVIDER=developer USER_LOOKUP_SKELETON=1 \
     bundle exec rails assets:precompile
