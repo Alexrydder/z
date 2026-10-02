@@ -6,6 +6,8 @@ USER root
 # do not linger under the fresh copy.
 RUN rm -rf /app/lib /app/app /app/config /app/db /app/public /app/cypress
 COPY --chown=vscode:vscode . /app
+# log and tmp are left out of the build context; Rails writes to both.
+RUN mkdir -p /app/log /app/tmp && chown vscode:vscode /app/log /app/tmp
 USER vscode
 WORKDIR /app
 # config/secrets.yml reads RAILS_SECRET; the real one reaches the container at
