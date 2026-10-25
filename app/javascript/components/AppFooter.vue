@@ -21,7 +21,7 @@
         Questions or a broken link: <a href="mailto:help@gablvm.org">help@gablvm.org</a>.
       </p>
       <p class="gablvm-footer__note">
-        Runs on <a href="https://github.com/UMN-LATIS/z">Z</a>, open source software from the University of Minnesota, under the GNU Affero General Public License.
+        Runs on Z, open source software under the GNU Affero General Public License.
         <a href="https://github.com/Alexrydder/z/tree/gablvm">Source code of this copy</a>.
       </p>
       <p class="gablvm-footer__copyright">&copy; {{ year }} Global Advocacy of Blind and Low Vision Muslims (GABLVM). All rights reserved.</p>
